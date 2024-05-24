@@ -1,0 +1,105 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.internetprog2024</groupId>
+  <artifactId>IPLCIS</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>IPLCIS Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  <dependencies>
+  <dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.23</version> <!-- Use the latest version available -->
+		</dependency>
+		<!-- Spring JDBC -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>5.3.10</version> <!-- Use the latest version available -->
+		</dependency>		<!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>5.2.25.RELEASE</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-web -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>5.2.25.RELEASE</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>4.0.1</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-jcl</artifactId>
+    <version>5.2.2.RELEASE</version>
+</dependency>
+		
+		<!-- Hibernate Core -->
+<dependency>
+	<groupId>org.hibernate</groupId>
+	<artifactId>hibernate-core</artifactId>
+	<version>5.6.5.Final</version>
+</dependency>
+ 
+<dependency>
+	<groupId>org.springframework</groupId>
+	<artifactId>spring-orm</artifactId>
+	<version>5.2.25.RELEASE</version> 
+</dependency>
+
+<!-- Hibernate EntityManager -->
+<dependency>
+	<groupId>org.hibernate</groupId>
+	<artifactId>hibernate-entitymanager</artifactId>
+	<version>5.5.6.Final</version>
+</dependency>
+
+<dependency>
+    <groupId>commons-fileupload</groupId>
+    <artifactId>commons-fileupload</artifactId>
+    <version>1.4</version>
+</dependency>
+
+
+	
+  </dependencies>
+  <build>
+   <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-war-plugin</artifactId>
+            <version>3.3.1</version> <!-- Use the latest version -->
+        </plugin>
+        <!-- Other plugins... -->
+        
+         <plugin>
+            <groupId>org.apache.tomcat.maven</groupId>
+            <artifactId>tomcat7-maven-plugin</artifactId>
+            <version>2.2</version> <!-- Use the latest version -->
+            <configuration>
+                <server>
+                    <tomcat>
+                        <relaxed-query-chars>
+                            <value>{</value>
+                            <value>}</value>
+                        </relaxed-query-chars>
+                    </tomcat>
+                </server>
+            </configuration>
+        </plugin>
+    </plugins>
+    <finalName>IPLCIS</finalName>
+  </build>
+</project>
